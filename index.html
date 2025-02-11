@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Hunter</title>
+
+
+    
+
+    
+    <!-- tailwind+ daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="font-extrabold text-5xl text-center py-9">
+        <h1>Welcome to my Phone Hunter!</h1>
+    </header>
+    <main class="container">
+        <!-- search box + search button -->
+        <section class="text-center py-4">
+            <div class="mb-3 w-50">
+                <input id="user-input" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <div onclick="setTimeOutFunc()" id="btn-search" class="btn btn-primary">Search</div>
+            </div>
+        </section>
+        <!-- spinner -->
+        <section  id="loading-spinner" class="hidden text-center">
+            <span class="loading loading-spinner loading-lg"></span>
+        </section>
+        <!-- phone cards -->
+         <section id="card-container" class="w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-9">
+
+         </section>
+        <!-- show more button -->
+        <section class="text-center pb-5">
+            <button onclick="ShowAll()" id="show-all-button" class="btn btn-primary">Show More</button>
+        </section>
+        <!-- display Search Result -->
+        <!-- <section>
+            <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">
+
+            </div>
+            <div id="no-found-message" class="mt-4 d-none">
+                <h3 class="text-warning">No Phone Found. Please try a new search</h3>
+            </div>
+            <div id="show-all" class="text-center d-none">
+                <div id="btn-show-all" class="btn btn-primary">Show All</div>
+            </div>
+        </section> -->
+        <!-- loader -->
+        <!-- <section id="loader" class="d-none">
+            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border  text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section> -->
+        <!-- modal contents -->
+        <section>
+            
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="phoneDetailModal" tabindex="-1" aria-labelledby="phoneDetailModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="phoneDetailModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="phone-details" class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+
+
+    
+    <script src="js/functionality.js"></script>
+
+</body>
+
+</html>
