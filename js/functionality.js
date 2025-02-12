@@ -3,7 +3,7 @@ async function loadAfterThreeSecondsAndApi(status,brandName){
     document.getElementById('loading-spinner').classList.add('hidden')
 
 
-    const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${brandName?brandName:'iphone'}`)
+    const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${brandName}`)
     const data = await response.json()
     
 
@@ -14,17 +14,32 @@ async function loadAfterThreeSecondsAndApi(status,brandName){
 
 //load all phones from api-->> make phone cards
 const displayFromApi =(data,status) =>{
+    const cardContainer = document.getElementById('card-container')
+    if(data.length===0){
+        cardContainer.classList.remove('grid')
+        cardContainer.innerHTML=`
+            <h1 class="text-3xl text-center text-red-500">NO Data Found. Try a new search!</h1>
+        `
+        return;
+    }
+    else{
+        cardContainer.classList.add('grid')
+    }
+
 
     let phones;
     if(status){
-        phones =(data)
+        phones = (data)
     }
     else{
         phones = (data.slice(0,6))
     }
+    if(phones.length===6){
+        document.getElementById('show-all-button').classList.remove('hidden')
+    }
     // console.log(phones)
 
-    const cardContainer = document.getElementById('card-container')
+    
     cardContainer.innerHTML=``
     phones.forEach((phone)=>{
     
@@ -108,8 +123,4 @@ function setTimeOutFunc(){
         loadAfterThreeSecondsAndApi(false,searchText)
     },3000)
 
-    document.getElementById('show-all-button').classList.remove('hidden')
 }
-
-
-// loadAfterThreeSecondsAndApi(false,'iphone')
