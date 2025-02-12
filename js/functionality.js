@@ -91,7 +91,7 @@ const showModalDetails = async(slugs)=>{
         </div>
         <h1 class="text-xl font-semibold">${name}</h1>
         <p class="">${brand}</p>
-        <p class="">${mainFeatures.sensors}</p>
+        
         <p class="">${others?.WLAN}</p>
         <p class="">${others?.Bluetooth}</p>
         <p class="">${others?.GPS}</p>
